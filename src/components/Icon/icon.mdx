@@ -1,0 +1,68 @@
+import { Meta, Story, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import Icon from "./icon";
+import * as IconStories from "./icon.stories";
+
+### Icon 图标组件
+
+基于 FontAwesome 的图标组件，支持多种主题和样式。
+
+#### 特性
+
+- 🎨 支持多种主题：primary、secondary、success、danger、warning、info
+- 📦 内置 FontAwesome 图标库
+- 🎯 完全可自定义样式和颜色
+- ♿ 支持无障碍访问
+- 🔧 易于集成和使用
+
+#### 使用场景
+
+- **Primary**: 主要操作图标，如保存、确认
+- **Secondary**: 次要操作图标，如取消、返回
+- **Success**: 成功状态图标，如完成、通过
+- **Info**: 信息提示图标，如帮助、说明
+- **Warning**: 警告提示图标，如注意、提醒
+- **Danger**: 危险操作图标，如删除、警告
+- **Light**: 浅色主题图标，适用于深色背景
+- **Dark**: 深色主题图标，适用于浅色背景
+
+<Meta of={IconStories} />
+
+## Props
+
+{/* 添加Controls 显示参数信息 */}
+
+<Controls />
+
+## Example
+
+### Primary Theme
+
+<Canvas of={IconStories.PrimaryCoffee}></Canvas>
+
+### Secondary Theme
+
+<Canvas of={IconStories.SecondaryCoffee}></Canvas>
+
+### Success Theme
+
+<Canvas of={IconStories.SuccessCoffee}></Canvas>
+
+### Info Theme
+
+<Canvas of={IconStories.InfoCoffee}></Canvas>
+
+### Warning Theme
+
+<Canvas of={IconStories.WarningCoffee}></Canvas>
+
+### Danger Theme
+
+<Canvas of={IconStories.DangerCoffee}></Canvas>
+
+### Light Theme
+
+<Canvas of={IconStories.LightCoffee}></Canvas>
+
+### Dark Theme
+
+<Canvas of={IconStories.DarkCoffee}></Canvas>

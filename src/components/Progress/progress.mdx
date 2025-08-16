@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import Progress from "./progress";
+import * as ProgressStories from "./progress.stories";
+
+### Progress 进度条
+
+用于展示操作进度，告知用户当前状态和预期。
+
+#### 特性
+
+- 🎨 支持 8 种主题颜色：primary、secondary、success、info、warning、danger、light、dark
+- 📏 可自定义进度条高度
+- 📊 支持显示/隐藏百分比文字
+- 🎯 简洁易用的 API 设计
+- ✨ 平滑的过渡动画
+
+#### 使用场景
+
+- **文件上传**: 显示文件上传进度
+- **数据加载**: 展示数据加载状态
+- **任务进度**: 显示任务完成程度
+- **表单验证**: 密码强度等级显示
+
+<Meta of={ProgressStories} />
+
+## Props
+
+<Controls />
+
+## Example
+
+### Default
+
+<Canvas of={ProgressStories.Default}></Canvas>
+
+### Primary
+
+<Canvas of={ProgressStories.Primary}></Canvas>
+
+### Success
+
+<Canvas of={ProgressStories.Success}></Canvas>
+
+### Warning
+
+<Canvas of={ProgressStories.Warning}></Canvas>
+
+### Danger
+
+<Canvas of={ProgressStories.Danger}></Canvas>
+
+### Custom Height
+
+<Canvas of={ProgressStories.CustomHeight}></Canvas>
+
+### Without Text
+
+<Canvas of={ProgressStories.WithoutText}></Canvas>
+
+### Thin Progress
+
+<Canvas of={ProgressStories.ThinProgress}></Canvas>
+
+## 基本用法
+
+```tsx
+import { Progress } from "cream-design";
+
+const App = () => {
+  return <Progress percent={30} theme="primary" />;
+};
+```
+
+## 不同主题
+
+```tsx
+<Progress percent={60} theme="primary" />
+<Progress percent={100} theme="success" />
+<Progress percent={75} theme="warning" />
+<Progress percent={25} theme="danger" />
+```

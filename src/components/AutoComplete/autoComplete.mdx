@@ -1,0 +1,101 @@
+import { Meta, Story, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import AutoComplete from "./autoComplete";
+import * as AutoCompleteStories from "./autoComplete.stories";
+
+### AutoComplete 自动完成
+
+自动完成输入框，提供智能搜索建议功能。支持同步和异步数据源，可自定义渲染模板。
+
+#### 特性
+
+- 🔍 支持同步和异步数据源
+- ⚡ 防抖搜索，提升性能
+- ⌨️ 键盘导航支持
+- 🎨 自定义渲染模板
+- 👆 点击外部区域关闭
+- 🔄 加载状态显示
+- ✨ 高亮当前选项
+
+#### 使用场景
+
+- **搜索建议**: 为用户提供智能搜索提示
+- **数据筛选**: 快速筛选大量数据
+- **API 搜索**: 连接远程 API 获取搜索结果
+
+<Meta of={AutoCompleteStories} />
+
+## Props
+
+<Controls />
+
+## Example
+
+### Default
+
+<Canvas of={AutoCompleteStories.Default}></Canvas>
+
+## 基本用法
+
+```tsx
+import { AutoComplete } from "cream-design";
+
+const App = () => {
+  const handleFetch = (value: string) => {
+    return ["apple", "banana", "cherry"]
+      .filter((item) => item.includes(value))
+      .map((item) => ({ value: item }));
+  };
+
+  return (
+    <AutoComplete fetchSuggestions={handleFetch} placeholder="请输入搜索内容" />
+  );
+};
+```
+
+## 异步数据源
+
+支持异步获取数据，显示加载状态。
+
+```tsx
+const handleAsyncFetch = (value: string) => {
+  return fetch(`/api/search?q=${value}`)
+    .then((res) => res.json())
+    .then((data) => data.map((item) => ({ value: item.name })));
+};
+
+<AutoComplete fetchSuggestions={handleAsyncFetch} placeholder="异步搜索" />;
+```
+
+## 自定义渲染模板
+
+可以自定义下拉选项的渲染内容。
+
+```tsx
+interface UserData {
+  value: string;
+  avatar: string;
+  email: string;
+}
+
+const renderOption = (item: DataSourceType<UserData>) => (
+  <div className="user-item">
+    <img src={item.avatar} alt={item.value} />
+    <div>
+      <div>{item.value}</div>
+      <div>{item.email}</div>
+    </div>
+  </div>
+);
+
+<AutoComplete
+  fetchSuggestions={handleUserFetch}
+  renderOption={renderOption}
+  placeholder="搜索用户"
+/>;
+```
+
+## 键盘导航
+
+- `↑` `↓` - 上下选择选项
+- `Enter` - 确认选择
+- `Escape` - 关闭下拉列表

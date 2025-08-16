@@ -1,0 +1,27 @@
+@use "mixin" as *;
+
+@include zoom-animation("top", scaleY(0), scaleY(1), center top);
+@include zoom-animation("left", scale(0.45, 0.45), scale(1, 1), top left);
+@include zoom-animation("right", scale(0.45, 0.45), scale(1, 1), top right);
+@include zoom-animation("bottom", scaleY(0), scaleY(1), center bottom);
+
+// FontAwesome spin animation
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Apply spin animation to FontAwesome icons
+.fa-spin {
+  animation: fa-spin 2s infinite linear !important;
+}
+
+// Alternative: apply directly to svg icons with spin attribute
+svg[data-fa-spin="true"],
+.svg-inline--fa.fa-spin {
+  animation: fa-spin 2s infinite linear !important;
+}

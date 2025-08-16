@@ -22,9 +22,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/anxin-personal-project/cream-design.git"
+    "url": "https://github.com/yeqiancheng/anxin-glaze-ui.git"
   },
-  "homepage": "https://gitee.com/anxin-personal-project/cream-design/blob/master/cream-design/README.md",
+  "homepage": "https://github.com/yeqiancheng/anxin-glaze-ui/blob/master/README.md",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^7.0.0",

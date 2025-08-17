@@ -4,12 +4,5 @@ type TransitionProps = CSSTransitionProps & {
     animation?: AnimationName;
     wrapper?: boolean;
 };
-declare const Transition: {
-    ({ animation, children, wrapper, classNames, ...restProps }: TransitionProps): import("react/jsx-runtime").JSX.Element;
-    defaultProps: {
-        unmountOnExit: boolean;
-        appear: boolean;
-        wrapper: boolean;
-    };
-};
+declare const Transition: ({ animation, children, wrapper, classNames, unmountOnExit, appear, ...restProps }: TransitionProps) => import("react/jsx-runtime").JSX.Element;
 export default Transition;
